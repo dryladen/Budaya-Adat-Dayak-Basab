@@ -1,174 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavbarCompt from "./components/navbar";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-screen">
-        <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-3 dark:bg-neutral-800">
-          <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
-            <div className="flex items-center justify-between">
-              <Link
-                className="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80"
-                href="#"
-                aria-label="Brand"
-              >
-                Brand
-              </Link>
-              <div className="sm:hidden">
-                
-              </div>
-            </div>
-            <div
-              id="hs-navbar-example"
-              className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
-              aria-labelledby="hs-navbar-example-collapse"
-            >
-              <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                <Link
-                  className="font-medium text-blue-500 focus:outline-none"
-                  href="#"
-                  aria-current="page"
-                >
-                  Landing
-                </Link>
-                <Link
-                  className="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                  href="#"
-                >
-                  Account
-                </Link>
-                <Link
-                  className="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                  href="#"
-                >
-                  Work
-                </Link>
-                <Link
-                  className="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                  href="#"
-                >
-                  Blog
-                </Link>
-              </div>
-            </div>
-          </nav>
-        </header>
-        <nav className="w-full bg-white px-8 py-4">
-          <div className="w-full justify-between gap-4 flex">
-            <div className="hidden md:flex items-center gap-4 ">
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Sejarah
-              </Link>
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Tradisi
-              </Link>
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Produk
-              </Link>
-            </div>
-            <div className="flex flex-row justify-center items-center order-first md:order-none">
-              {/* <img
-                src="https://res.cloudinary.com/speedwares/image/upload/v1659284687/windframe-logo-main_daes7r.png"
-                className="w-12 md:w-16"
-              /> */}
-              <h1 className="font-bold text-4xl font-mono">
-                Budaya Adat Dayak Basab
-              </h1>
-            </div>
-            <div className="flex bg-white justify-center items-center gap-4">
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Tentang Kami
-              </Link>
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              ></Link>
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Alat Musik
-              </Link>
-              <Link
-                href="#"
-                className="text-gray-600 text-center font-medium text-base"
-              >
-                Makanan
-              </Link>
-            </div>
-            <div className="md:hidden flex ml-auto items-center">
-              <div className="outline-none mobile-menu-button">
-                <svg
-                  id="Windframe_aVroxDBF0z"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6 text-gray-500 hover:text-green-500"
-                >
-                  <path
-                    id="Windframe_MeQpy967Nxs"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div className="hidden md:hidden mobile-menu">
-            <div>
-              <div className="flex flex-col">
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-base"
-                >
-                  Product
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-base"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-base"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-base"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-lg"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 text-center mt-2 font-medium text-lg"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <NavbarCompt />
         <section id="hero-image" className="bg-gray-100 min-h-screen p-8">
           <div className="max-w-[85rem] mx-auto">
             <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
@@ -226,28 +64,7 @@ font-sans sm:text-4xl"
                       className="items-center justify-center w-32 text-blue-300 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block flex absolute
   top-0 left-0 z-0 -mt-8 -ml-20"
                     >
-                      <svg
-                        viewBox="0 0 52 24"
-                        fill="currentColor"
-                        className="w-full h-full"
-                      >
-                        <defs>
-                          <pattern
-                            id="9ef1ff62-feb2-41fe-8163-772b4c79de7b"
-                            x="0"
-                            y="0"
-                            width=".135"
-                            height=".30"
-                          >
-                            <circle cx="1" cy="1" r=".7" />
-                          </pattern>
-                        </defs>
-                        <rect
-                          fill="url(#9ef1ff62-feb2-41fe-8163-772b4c79de7b)"
-                          width="52"
-                          height="24"
-                        />
-                      </svg>
+                      
                     </span>
                     <p className="font-bold text-3xl inline tracking-tight font-sans sm:text-4xl sm:leading-none">
                       Improve
@@ -298,29 +115,7 @@ rounded-full bg-pink-500 tracking-wider uppercase "
 tracking-tight sm:text-4xl md:mx-auto"
                 >
                   <div className="relative inline-block">
-                    <svg
-                      id="Windframe_2c0umsqva8"
-                      viewBox="0 0 52 24"
-                      fill="currentColor"
-                      className="absolute top-0 left-0 z-0 hidden
-  w-32 -mt-8 -ml-20 text-blue-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-                    >
-                      <div>
-                        <div className="w-.135 h-.30">
-                          <circle
-                            id="Windframe_i-ntUDJp14"
-                            cx="1"
-                            cy="1"
-                            r=".7"
-                          />
-                        </div>
-                      </div>
-                      <rect
-                        id="Windframe_XJIHtvXpbN"
-                        fill="url(#db164e35-2a0e-4c0f-ab05-f14edc6d4d30)"
-                        className="w-52 h-24"
-                      />
-                    </svg>
+                    
                     <p
                       className="font-bold leading-none text-gray-900 text-3xl relative max-w-lg font-sans tracking-tight sm:text-4xl
   md:mx-auto inline"
