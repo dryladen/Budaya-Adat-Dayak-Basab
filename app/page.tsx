@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import NavbarCompt from "./components/navbar";
+import CardComp from "./components/card";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full">
         <NavbarCompt />
         <section id="hero-image" className="bg-gray-100 min-h-screen p-8">
           <div className="max-w-[85rem] mx-auto">
@@ -63,9 +64,7 @@ font-sans sm:text-4xl"
                     <span
                       className="items-center justify-center w-32 text-blue-300 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block flex absolute
   top-0 left-0 z-0 -mt-8 -ml-20"
-                    >
-                      
-                    </span>
+                    ></span>
                     <p className="font-bold text-3xl inline tracking-tight font-sans sm:text-4xl sm:leading-none">
                       Improve
                     </p>
@@ -114,21 +113,11 @@ rounded-full bg-pink-500 tracking-wider uppercase "
                   className="mt-0 mr-auto mb-6 ml-auto font-bold leading-none text-gray-900 text-3xl max-w-lg font-sans
 tracking-tight sm:text-4xl md:mx-auto"
                 >
-                  <div className="relative inline-block">
-                    
-                    <p
-                      className="font-bold leading-none text-gray-900 text-3xl relative max-w-lg font-sans tracking-tight sm:text-4xl
-  md:mx-auto inline"
-                    >
-                      Improve
-                    </p>
-                  </div>
-                  <p className="inline"></p>
                   <p
                     className="font-bold leading-none text-gray-900 text-3xl max-w-lg font-sans tracking-tight sm:text-4xl md:mx-auto
 inline"
                   >
-                    your day to the MAX with Music
+                    Improve your day to the MAX with Music
                   </p>
                 </div>
                 <p className="text-gray-700 text-base md:text-lg">
@@ -138,69 +127,12 @@ inline"
                 </p>
               </div>
               <div className="grid mt-0 mr-0 mb-8 ml-0 max-w-sm gap-5 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
-                <div className="pt-20 pr-10 pb-20 pl-10 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
-                  <p className="mb-2 text-xs font-semibold text-gray-600 tracking-wide uppercase">
-                    20 Nov 2020
-                  </p>
-                  <p
-                    className="inline-block mt-0 mr-auto mb-3 ml-auto font-extrabold text-2xl leading-7 max-w-xs transition-colors
-duration-200 hover:text-blue-900"
-                  >
-                    Nori grape silver beet broccoli kombu beet
-                  </p>
-                  <p className="mt-0 mr-auto mb-2 ml-auto text-gray-700 max-w-xs">
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque.
-                  </p>
-                  <p
-                    className="inline-flex items-center font-semibold text-blue-700 transition-colors duration-200
-hover:text-blue-900"
-                  >
-                    Read more
-                  </p>
-                </div>
-                <div className="pt-20 pr-10 pb-20 pl-10 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
-                  <p className="mb-2 text-xs font-semibold text-gray-600 tracking-wide uppercase">
-                    20 Dec 2020
-                  </p>
-                  <p
-                    className="inline-block mt-0 mr-auto mb-3 ml-auto font-extrabold text-2xl leading-7 max-w-xs transition-colors
-duration-200 hover:text-blue-700"
-                  >
-                    Well, the way they make shows is, they make one
-                  </p>
-                  <p className="mt-0 mr-auto mb-2 ml-auto text-gray-700 max-w-xs">
-                    Some pilots get picked and become television programs. Some
-                    don't, become nothing.
-                  </p>
-                  <p
-                    className="inline-flex items-center font-semibold text-blue-700 transition-colors duration-200
-hover:text-blue-900"
-                  >
-                    Read more
-                  </p>
-                </div>
-                <div className="pt-20 pr-10 pb-20 pl-10 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
-                  <p className="mb-2 text-xs font-semibold text-gray-600 tracking-wide uppercase">
-                    20 Jan 2021
-                  </p>
-                  <p
-                    className="inline-block mt-0 mr-auto mb-3 ml-auto font-extrabold text-2xl leading-7 max-w-xs transition-colors
-duration-200 hover:text-blue-900"
-                  >
-                    Pommy ipsum smeg head whizz morris himer due
-                  </p>
-                  <p className="mt-0 mr-auto mb-2 ml-auto text-gray-700 max-w-xs">
-                    Taking the mick middle className bog roll bow ties are cool
-                    posh nosh off t'shop, stew and dumps.
-                  </p>
-                  <p
-                    className="inline-flex items-center font-semibold text-blue-700 transition-colors duration-200
-hover:text-blue-900"
-                  >
-                    Read more
-                  </p>
-                </div>
+                <CardComp />
+                <CardComp />
+                <CardComp />
+                <CardComp />
+                <CardComp />
+                <CardComp />
               </div>
             </div>
           </div>
