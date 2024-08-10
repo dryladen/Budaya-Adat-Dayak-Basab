@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import PrelineScript from "./components/PrelineScripts";
+import { Providers } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} scroll-smooth`} >{children}</body>
-      <PrelineScript />
+    <html lang="en" className="light">
+      <Providers>{children}</Providers>
     </html>
   );
 }
