@@ -19,10 +19,10 @@ export default function NavbarCompt() {
   const menuItems = ["Home", "Sejarah", "Blog", "Lokasi"];
 
   return (
-    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar shouldHideOnScroll maxWidth="full"  isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="px-4 sm:px-10 py-6">
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
-          <p className="font-bold text-inherit text-xl">
+          <p className="font-bold text-2xl text-gray-800">
             Budaya Adat Dayak Basap
           </p>
         </NavbarBrand>
@@ -34,7 +34,7 @@ export default function NavbarCompt() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#" size="lg">
+          <Link color="foreground" href="#sejarah" size="lg">
             Sejarah
           </Link>
         </NavbarItem>
@@ -50,9 +50,9 @@ export default function NavbarCompt() {
         </NavbarItem>
       </NavbarContent>
       {/* Mobile View */}
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="sm:hidden pr-3">
         <NavbarBrand>
-          <p className="font-bold text-inherit">Budaya Adat Dayak Basap</p>
+          <p className="font-bold text-xl">Budaya Adat Dayak Basap</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="end">

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Oswald } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 
-const oswald = Oswald({ subsets: ["latin"] });
+const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dayak Basab",
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light ${oswald.className}`} >
-      <body >
+    <html lang="en" className={`light ${roboto.className}`}>
+      <body className="bg-white">
         <Providers>{children}</Providers>
       </body>
     </html>
