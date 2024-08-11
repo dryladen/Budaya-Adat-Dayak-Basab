@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex flex-col gap-4">
                 <p className="text-xl font-semibold text-gray-300">
-                  Tentang Kami
+                  Kunjungi
                 </p>
                 <Link
                   href="#"
@@ -43,7 +43,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-xl font-semibold text-gray-300">
-                  Kontak Kami
+                  Media Sosial
                 </p>
                 <Link
                   href="#"
@@ -61,7 +61,7 @@ export default function Footer() {
                   href="#"
                   className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
                 >
-                  Twitter
+                  WhatsApp
                 </Link>
               </div>
             </div>

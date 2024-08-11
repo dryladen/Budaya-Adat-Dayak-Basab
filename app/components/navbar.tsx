@@ -23,7 +23,7 @@ export default function NavbarCompt() {
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
           <p className="font-bold text-2xl text-gray-800">
-            Budaya Adat Dayak Basap
+            Budaya Adat Dayak Basab
           </p>
         </NavbarBrand>
       </NavbarContent>
@@ -39,12 +39,12 @@ export default function NavbarCompt() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#" size="lg">
+          <Link color="foreground" href="#blog" size="lg">
             Blog
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#" size="lg">
+          <Link color="foreground" href="#lokasi" size="lg">
             Lokasi
           </Link>
         </NavbarItem>
@@ -52,7 +52,7 @@ export default function NavbarCompt() {
       {/* Mobile View */}
       <NavbarContent className="sm:hidden pr-3">
         <NavbarBrand>
-          <p className="font-bold text-xl">Budaya Adat Dayak Basap</p>
+          <p className="font-bold text-xl">Budaya Adat Dayak Basab</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="end">
