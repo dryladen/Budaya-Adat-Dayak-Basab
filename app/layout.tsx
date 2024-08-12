@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
-import NavbarCompt from "./components/Navbar";
+import NavbarCompt from "./components/NavbarCompt";
 import Footer from "./components/Footer";
-import { ScrollShadow } from "@nextui-org/react";
 
 const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });
 
