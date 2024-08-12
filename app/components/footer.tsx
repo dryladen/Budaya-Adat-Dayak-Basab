@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer id="footer">
       <div className="bg-gray-900 w-full pt-8 px-4 md:px-24 lg:px-8">
@@ -19,9 +19,7 @@ export default function Footer() {
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex flex-col gap-4">
-                <p className="text-xl font-semibold text-gray-300">
-                  Kunjungi
-                </p>
+                <p className="text-xl font-semibold text-gray-300">Kunjungi</p>
                 <Link
                   href="#"
                   className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
@@ -92,4 +90,6 @@ fab text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
