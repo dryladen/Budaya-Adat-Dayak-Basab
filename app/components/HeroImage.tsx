@@ -10,10 +10,10 @@ const HeroImage = () => {
       <div className=" mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div className="">
-            <h1 className="block text-2xl font-bold text-red-600 sm:text-4xl lg:text-[40px] lg:leading-tight dark:text-white">
+            <h1 className="block font-bold sm:text-4xl lg:text-[88px] lg:leading-tight">
               <span className="">Dayak Basab</span>
             </h1>
-            <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+            <p className="mt-3 text-lg text-gray-600">
               Mari mengenal lebih dekat tentang Suku Dayak Basab yang ada di
               Kalimantan Timur. Suku Dayak Basab memiliki kebudayaan yang unik
               dan menarik untuk dijelajahi.

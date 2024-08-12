@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./provider";
 import NavbarCompt from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ScrollShadow } from "@nextui-org/react";
 
 const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });
 
