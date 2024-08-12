@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light ${roboto.className}`}>
+    <html lang="en" className={`light ${roboto.className} scroll-smooth`}>
       <body>
         <main className="relative overflow-hidden bg-white">
           <NavbarCompt />

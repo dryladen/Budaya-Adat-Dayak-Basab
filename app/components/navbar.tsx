@@ -29,7 +29,7 @@ const NavLink = ({ title, link }: NavLinkProps) => {
 };
 
 const MenuItems = [
-  { title: "Beranda", link: "#" },
+  { title: "Beranda", link: "#hero-image" },
   { title: "Sejarah", link: "#sejarah" },
   { title: "Blog", link: "#blog" },
   { title: "Lokasi", link: "#lokasi" },
@@ -42,7 +42,7 @@ export default function NavbarCompt() {
       maxWidth="full"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="sm:px-14 py-5 bg-white relative z-30 "
+      className="md:px-16 md:py-5 z-30 fixed "
     >
       <NavbarBrand className="hidden sm:flex">
         <Link href="#" className="font-bold text-2xl text-gray-900">
