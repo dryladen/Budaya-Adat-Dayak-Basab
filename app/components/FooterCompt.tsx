@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Footer = () => {
+const FooterCompt = () => {
   return (
     <footer id="footer">
       <div className="bg-gray-900 w-full pt-8 px-4 md:px-24 lg:px-8">
@@ -92,4 +92,4 @@ fab text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
   );
 };
 
-export default Footer;
+export default FooterCompt;

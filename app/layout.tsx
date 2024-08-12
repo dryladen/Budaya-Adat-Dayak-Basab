@@ -3,7 +3,7 @@ import { Roboto_Flex } from "next/font/google";
 import "@/app/globals.css";
 import { Providers } from "@/app/provider";
 import NavbarCompt from "@/app/components/NavbarCompt";
-import Footer from "@/app/components/Footer";
+import FooterCompt from "@/app/components/FooterCompt";
 
 const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
           <NavbarCompt />
           <Providers>{children}</Providers>
         </main>
-        <Footer />
+        <FooterCompt />
       </body>
     </html>
   );
