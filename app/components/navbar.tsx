@@ -29,7 +29,7 @@ const NavLink = ({ title, link }: NavLinkProps) => {
 };
 
 const MenuItems = [
-  { title: "Home", link: "#" },
+  { title: "Beranda", link: "#" },
   { title: "Sejarah", link: "#sejarah" },
   { title: "Blog", link: "#blog" },
   { title: "Lokasi", link: "#lokasi" },
