@@ -1,5 +1,3 @@
-import React from "react";
-
 const Video = () => {
   return (
     <section className="relative md:p-20 flex gap-20 bg-gray-100">
