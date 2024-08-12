@@ -34,9 +34,8 @@ const MenuItems = [
   { title: "Blog", link: "#blog" },
   { title: "Lokasi", link: "#lokasi" },
 ];
-export default function NavbarCompt() {
+const NavbarCompt = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   return (
     <Navbar
       maxWidth="full"
@@ -60,7 +59,9 @@ export default function NavbarCompt() {
       {/* Mobile View */}
       <NavbarContent className="sm:hidden pr-3">
         <NavbarBrand>
-          <p className="font-bold text-xl text-gray-900">Budaya Adat Dayak Basab</p>
+          <p className="font-bold text-xl text-gray-900">
+            Budaya Adat Dayak Basab
+          </p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="end">
@@ -75,4 +76,6 @@ export default function NavbarCompt() {
       </NavbarMenu>
     </Navbar>
   );
-}
+};
+
+export default NavbarCompt;
