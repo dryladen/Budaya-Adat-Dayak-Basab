@@ -21,7 +21,7 @@ type NavLinkProps = {
 const NavLink = ({ title, link }: NavLinkProps) => {
   return (
     <>
-      <NavbarItem className="hover:font-bold transition-transform hover:border-b-large hover:border-yellow-400 hover:animate-appearance-in">
+      <NavbarItem className="hover:font-bold text-gray-600 transition-transform hover:border-b-large hover:border-yellow-400 hover:animate-appearance-in">
         <Link href={link}>{title}</Link>
       </NavbarItem>
     </>
