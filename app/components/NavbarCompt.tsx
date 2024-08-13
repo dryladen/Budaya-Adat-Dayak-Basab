@@ -66,6 +66,7 @@ const NavbarCompt = () => {
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="end">
         <NavbarMenuToggle
+          className="text-gray-600 "
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
