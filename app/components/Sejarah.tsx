@@ -9,11 +9,9 @@ const History = () => {
       className="bg-gradient-to-b from-white from-90% to-gray-100 relative p-4 md:p-20 md:gap-8 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 justify-end"
     >
       <div className="flex flex-col">
-        <div className="mt-6 mb-4">
-          <h2 className="text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
-            Sejarah
-          </h2>
-        </div>
+        <h2 className="mt-6 mb-4 md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
+          Sejarah
+        </h2>
         <p className="text-justify indent-8 text-gray-700 md:text-lg mb-4">
           <span className="font-bold">Basab</span> asal kata dari asab, ditambah
           awalan Be (B) menjadi Be Asab, dalam bahasa Kutai Be Asab berarti ada
@@ -34,7 +32,7 @@ const History = () => {
         </p>
         <div className="my-7 grid gap-3 w-full sm:inline-flex">
           <Link
-            className="p-4 sm:py-5 sm:px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none hover:-top-1 relative transition-all"
+            className="p-4 sm:py-5 sm:px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-400 hover:bg-yellow-600 focus:outline-none hover:-top-1 relative transition-all"
             href="#sejarah"
           >
             <ChevronRight size={24} className="mr-2" />
