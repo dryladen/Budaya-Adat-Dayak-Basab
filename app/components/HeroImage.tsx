@@ -5,7 +5,7 @@ const HeroImage = () => {
   return (
     <section
       id="hero-image"
-      className="p-4 pb-20 md:px-20 bg-gradient-to-b from-white from-70%  to-gray-100 relative mt-16 md:mt-24"
+      className="p-4 pb-20 md:px-20 bg-gradient-to-b from-white from-90%  to-gray-100 relative mt-16 md:mt-24"
     >
       <div className="hidden md:flex bg-red-400 p-10 rounded-full w-20 h-20 absolute top-14 -left-10"></div>
       <div className="hidden md:flex bg-red-400 p-10 rounded-full w-20 h-20 absolute bottom-20 left-96"></div>
@@ -23,7 +23,7 @@ const HeroImage = () => {
             </p>
             <div className="my-7 grid gap-3 w-full sm:inline-flex">
               <Link
-                className="py-5 px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none "
+                className="p-4 sm:py-5 sm:px-8 inline-flex text-lg justify-center items-center rounded-full text-white font-medium bg-yellow-400 hover:bg-yellow-600 focus:outline-none "
                 href="#sejarah"
               >
                 Mari Jelajahi
