@@ -6,7 +6,7 @@ const History = () => {
   return (
     <section
       id="sejarah"
-      className="bg-gradient-to-b from-white from-90% to-gray-100 relative p-4 md:p-20 md:gap-8 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 justify-end"
+      className="bg-gradient-to-b from-white from-90% to-gray-100 relative p-4 md:p-12 lg:p-20 md:gap-8 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 justify-end"
     >
       <div className="flex flex-col">
         <h2 className="mt-6 mb-4 md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">

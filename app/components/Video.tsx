@@ -1,7 +1,7 @@
 const Video = () => {
   return (
-    <section className="relative md:p-20 flex gap-16 bg-gradient-to-b from-gray-100 to-white from-90% p-4 flex-col md:flex-row justify-center">
-      <div className="p-20 shadow-xl absolute bg-red-500 left-0 -top-5 md:top-10 w-full lg:w-[680px] h-[430px] lg:rounded-r-[1.8rem]"></div>
+    <section className="relative md:p-12 lg:p-20 flex gap-16 bg-gradient-to-b from-gray-100 to-white from-90% p-4 flex-col md:flex-row justify-center">
+      <div className="p-20 shadow-xl absolute bg-red-500 left-0 -top-5 md:top-5 w-full lg:w-[680px] h-[430px] lg:rounded-r-[1.8rem]"></div>
       <iframe 
         className="rounded-3xl shadow-xl w-full relative z-10 border-2 border-white"
         width="640"
@@ -11,8 +11,8 @@ const Video = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
-      <div className="relative z-10 md:bg-white  md:p-8 lg:p-20 rounded-3xl md:shadow-lg sm:top-10">
-        <h2 className="text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
+      <div className="relative z-10 md:bg-white h-full  md:p-8 lg:p-20 rounded-3xl md:shadow-lg sm:top-20">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold flex flex-wrap text-gray-900">
           Berada di Desa Jonggon
         </h2>
         <p className="text-medium text-gray-500 mt-2 ">

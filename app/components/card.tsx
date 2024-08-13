@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function CardComp() {
   return (
-    <Card className="p-3">
+    <Card className="p-3 rounded-3xl">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <h4 className="font-bold text-large">Frontend Radio</h4>
         {/* <p className="text-tiny uppercase font-bold">Artikel</p> */}
@@ -23,8 +23,9 @@ export default function CardComp() {
           frontend yang sedang trending...
         </p>
         <Button
-          className="mt-4 flex bg-yellow-400 hover:bg-yellow-700 text-white transition-all"
+          className="mt-4 py-6 flex bg-yellow-400 hover:bg-yellow-700 text-white transition-all focus:outline-none focus:ring-0"
           color="default"
+          
           radius="full"
           startContent={<ChevronRight size={24} />}
         >
