@@ -1,92 +1,80 @@
+import { Mail, Phone } from "lucide-react";
+import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
 const FooterCompt = () => {
   return (
-    <footer id="footer">
-      <div className="bg-gray-900 w-full pt-8 px-4 md:px-24 lg:px-8">
-        <div className="mr-auto ml-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          <div className="grid gap-5 grid-cols-2 mb-4 row-gap-8">
-            <div className="flex flex-col justify-between">
-              <p className="text-gray-300 text-4xl">Budaya Adat Dayak Basab</p>
-              <div className="gap-2 flex flex-col">
-                <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500">
-                  @budayaadatdayakbasab
-                </p>
-                <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500">
-                  budayaadatdayakbasab@gmail.com
-                </p>
-              </div>
+    <footer
+      id="footer"
+      className="bg-red-600 w-full pt-8 px-4 md:p-12 lg:px-20 lg:pb-0 lg:pt-12 "
+    >
+      <div className="grid gap-5 grid-cols-2 mb-4 ">
+        <div className="flex sm:flex-col  justify-between">
+          <p className="text-gray-100 text-4xl">Budaya Adat Dayak Basab</p>
+          <div className="gap-2 flex flex-col">
+            <div className="flex gap-3">
+              <Phone className="text-white" />
+              <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-white">
+                +62-xxx-xxx-xxxx
+              </p>
             </div>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="flex flex-col gap-4">
-                <p className="text-xl font-semibold text-gray-300">Kunjungi</p>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  Sejarah
-                </Link>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  Lokasi
-                </Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                <p className="text-xl font-semibold text-gray-300">
-                  Media Sosial
-                </p>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  Facebook
-                </Link>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  Instagram
-                </Link>
-                <Link
-                  href="#"
-                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-500"
-                >
-                  WhatsApp
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between py-5 border-t border-gray-800 sm:flex-row">
-            <p className="text-sm text-gray-500">
-              © Copyright 2024 Budaya Adat Dayak Basab.
-            </p>
-            <div className="flex items-center mt-4 space-x-4 sm:mt-0">
-              <Link
-                href=""
-                className="fa-twitter h-5 fab text-gray-500
-transition-colors duration-300 hover:text-teal-accent-400"
-              ></Link>
-              <Link
-                href=""
-                className="fa-instagram h-5 fab
-text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
-              ></Link>
-              <Link
-                href=""
-                className="fa-facebook h-5
-fab text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
-              ></Link>
+            <div className="flex gap-3">
+              <Mail className="text-white" />
+              <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100">
+                budayaadatdayakbasab@gmail.com
+              </p>
             </div>
           </div>
         </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="flex flex-col gap-4">
+            <p className="text-xl font-semibold text-gray-100">Kunjungi</p>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100"
+            >
+              Sejarah
+            </Link>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100"
+            >
+              Blog
+            </Link>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100"
+            >
+              Lokasi
+            </Link>
+          </div>
+          <div className="flex flex-col gap-4 text-gray-100">
+            <p className="text-xl font-semibold ">Media Sosial</p>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+            >
+              <FaFacebook fontSize={24} className="text-white" /><span>@dayak_basab</span>
+            </Link>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+            >
+              <FaInstagram fontSize={24} className="text-white" /><span>@dayak_basab</span>
+            </Link>
+            <Link
+              href="#"
+              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+            >
+              <FaWhatsapp fontSize={24} className="text-white" /><span>+62-8xx-xxx-xxxx</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-between py-5 border-t border-white sm:flex-row">
+        <p className="text-sm text-gray-100">
+          © Copyright 2024 Budaya Adat Dayak Basab.
+        </p>
       </div>
     </footer>
   );

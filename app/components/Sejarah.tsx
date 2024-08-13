@@ -1,3 +1,4 @@
+import { Button } from "@nextui-org/react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,13 +32,14 @@ const History = () => {
           burung dan melintasi sebuah jurang yang dalam)...
         </p>
         <div className="my-7 grid gap-3 w-full sm:inline-flex">
-          <Link
-            className="p-4 sm:py-5 sm:px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-400 hover:bg-yellow-600 focus:outline-none hover:-top-1 relative transition-all"
-            href="#sejarah"
+          <Button
+            className="p-4 sm:py-6 sm:px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-400 hover:bg-yellow-600 focus:outline-none hover:-translate-y-2 relative transition-all"
+            startContent={<ChevronRight size={24} className="mr-2" />}
           >
-            <ChevronRight size={24} className="mr-2" />
-            Baca Selengkapnya
-          </Link>
+            <Link className="" href="#sejarah">
+              Baca Selengkapnya
+            </Link>
+          </Button>
         </div>
       </div>
       <div className="relative flex justify-center">

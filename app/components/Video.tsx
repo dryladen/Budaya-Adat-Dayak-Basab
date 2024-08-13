@@ -17,7 +17,7 @@ const Video = () => {
         </h2>
         <p className="text-medium text-gray-500 mt-2 ">
           Pada tahun 1970 masyarakat Suku Dayak Basab menjadi satu di Desa
-          Jonggon Desa antara Dayak Basab Jitan dengan masyarakat yang berada di
+          Jonggon, Desa antara Dayak Basab Jitan dengan masyarakat yang berada di
           Desa Jonggon.
         </p>
       </div>

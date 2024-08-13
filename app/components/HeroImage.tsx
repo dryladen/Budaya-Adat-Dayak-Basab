@@ -1,3 +1,4 @@
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,14 +22,9 @@ const HeroImage = () => {
               Kalimantan Timur. Suku Dayak Basab memiliki kebudayaan yang unik
               dan menarik untuk dijelajahi.
             </p>
-            <div className="my-7 grid gap-3 w-full sm:inline-flex">
-              <Link
-                className="p-4 sm:py-4 sm:px-8 inline-flex text-lg justify-center items-center rounded-full text-white font-medium bg-yellow-400 hover:bg-yellow-600 focus:outline-none "
-                href="#sejarah"
-              >
-                Mari Jelajahi
-              </Link>
-            </div>
+            <Button className="sm:py-6 sm:px-8 inline-flex my-7 text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none ">
+              <Link href="#sejarah">Mari Jelajahi</Link>
+            </Button>
           </div>
           <div className="relative">
             <Image
