@@ -10,16 +10,16 @@ const FooterCompt = () => {
     >
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 mb-4 ">
         <div className="flex flex-col  justify-between mb-6">
-          <p className="text-gray-100 text-4xl mb-4">Budaya Adat Dayak Basab</p>
+          <p className="text-gray-100 text-2xl md:text-4xl mb-4">Budaya Adat Dayak Basab</p>
           <div className="gap-2 flex flex-col">
             <div className="flex gap-3">
-              <Phone className="text-white" />
+              <Phone className="text-white" width={16} />
               <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-white">
                 +62-xxx-xxx-xxxx
               </p>
             </div>
             <div className="flex gap-3">
-              <Mail className="text-white" />
+              <Mail className="text-white" width={16} />
               <p className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100">
                 budayaadatdayakbasab@gmail.com
               </p>
@@ -52,21 +52,21 @@ const FooterCompt = () => {
             <p className="text-xl font-semibold ">Media Sosial</p>
             <Link
               href="#"
-              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
             >
-              <FaFacebook fontSize={24} className="text-white" /><span>@dayak_basab</span>
+              <FaFacebook fontSize={16} className="text-white" /><span>@dayak_basab</span>
             </Link>
             <Link
               href="#"
-              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
             >
-              <FaInstagram fontSize={24} className="text-white" /><span>@dayak_basab</span>
+              <FaInstagram fontSize={16} className="text-white" /><span>@dayak_basab</span>
             </Link>
             <Link
               href="#"
-              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
             >
-              <FaWhatsapp fontSize={24} className="text-white" /><span>+62-8xx-xxx-xxxx</span>
+              <FaWhatsapp fontSize={16} className="text-white" /><span>+62-8xx-xxx-xxxx</span>
             </Link>
           </div>
         </div>
