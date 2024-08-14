@@ -8,9 +8,9 @@ const FooterCompt = () => {
       id="footer"
       className="bg-red-600 w-full pt-8 px-4 md:p-12 lg:px-20 lg:pb-0 lg:pt-12 "
     >
-      <div className="grid gap-5 grid-cols-2 mb-4 ">
-        <div className="flex sm:flex-col  justify-between">
-          <p className="text-gray-100 text-4xl">Budaya Adat Dayak Basab</p>
+      <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 mb-4 ">
+        <div className="flex flex-col  justify-between mb-6">
+          <p className="text-gray-100 text-4xl mb-4">Budaya Adat Dayak Basab</p>
           <div className="gap-2 flex flex-col">
             <div className="flex gap-3">
               <Phone className="text-white" />
@@ -26,7 +26,7 @@ const FooterCompt = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-2">
           <div className="flex flex-col gap-4">
             <p className="text-xl font-semibold text-gray-100">Kunjungi</p>
             <Link
@@ -52,19 +52,19 @@ const FooterCompt = () => {
             <p className="text-xl font-semibold ">Media Sosial</p>
             <Link
               href="#"
-              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
             >
               <FaFacebook fontSize={24} className="text-white" /><span>@dayak_basab</span>
             </Link>
             <Link
               href="#"
-              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
             >
               <FaInstagram fontSize={24} className="text-white" /><span>@dayak_basab</span>
             </Link>
             <Link
               href="#"
-              className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
+              className=" text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2"
             >
               <FaWhatsapp fontSize={24} className="text-white" /><span>+62-8xx-xxx-xxxx</span>
             </Link>

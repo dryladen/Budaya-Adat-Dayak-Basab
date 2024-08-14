@@ -40,7 +40,7 @@ const NavbarCompt = () => {
       maxWidth="full"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="md:px-6 lg:px-16 md:py-5 z-30 fixed "
+      className="md:px-6 lg:px-16 md:py-5 z-30 fixed w-full"
     >
       <NavbarBrand className="hidden sm:flex">
         <Link href="#" className="font-bold text-2xl text-gray-900">
