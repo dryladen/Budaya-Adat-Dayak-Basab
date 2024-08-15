@@ -7,9 +7,7 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
-  Button,
 } from "@nextui-org/react";
-import { HomeIcon } from "lucide-react";
 import Link from "next/link";
 
 type NavLinkProps = {
@@ -31,7 +29,7 @@ const MenuItems = [
   { title: "Beranda", link: "#hero-image" },
   { title: "Sejarah", link: "#sejarah" },
   { title: "Blog", link: "#blog" },
-  { title: "Lokasi", link: "#lokasi" },
+  { title: "Lokasi", link: "/#lokasi" },
 ];
 const NavbarCompt = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
