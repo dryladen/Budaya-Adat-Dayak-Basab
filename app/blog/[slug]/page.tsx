@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Blog = (slug : string) => {
-  return (
-    <div>single blog</div>
-  )
-}
+const Page = ({ params }: { params: { slug: string } }) => {
+  return <div className="mt-28">{params.slug}</div>;
+};
 
-export default Blog
+export default Page;
