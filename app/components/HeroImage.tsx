@@ -2,7 +2,31 @@ import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeroImage = () => {
+async function getData() {
+  const response = await fetch(`${process.env.NEXT_HYGRAPH_ENDPOINT}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `query MyQuery {
+  heroImage(where: {id: "clzu22i5g7a0o07zlh4k2b0ye"}) {
+    id
+    judul
+    deskripsi
+    gambar {
+      url
+    }
+  }
+}`,
+    }),
+  });
+  const json = await response.json();
+  return json.data.heroImage;
+}
+
+const HeroImage = async () => {
+  const data = await getData();
   return (
     <section
       id="hero-image"
@@ -15,12 +39,10 @@ const HeroImage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div className="">
             <h1 className="block font-bold text-gray-900 text-4xl sm:text-6xl md:text-6xl lg:text-[88px] lg:leading-tight">
-              Dayak Basab
+              {data.judul}
             </h1>
             <p className="mt-3 md:text-medium lg:text-lg text-gray-500">
-              Mari mengenal lebih dekat tentang Suku Dayak Basab yang ada di
-              Kalimantan Timur. Suku Dayak Basab memiliki kebudayaan yang unik
-              dan menarik untuk dijelajahi.
+              {data.deskripsi}
             </p>
             <Button className="sm:py-6 sm:px-8 inline-flex my-7 text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none ">
               <Link href="#sejarah">Mari Jelajahi</Link>
@@ -28,7 +50,8 @@ const HeroImage = () => {
           </div>
           <div className="relative">
             <Image
-              src="/a7cc.jpeg"
+              priority={true}
+              src={data.gambar.url}
               alt="hero"
               width={1200}
               height={200}

@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["media.graphassets.com","images.unsplash.com"],
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ap-northeast-1.graphassets.com'
+      },
+    ]
   },
 };
 
