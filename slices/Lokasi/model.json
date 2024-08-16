@@ -1,0 +1,33 @@
+{
+  "id": "lokasi",
+  "type": "SharedSlice",
+  "name": "Lokasi",
+  "description": "Lokasi",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "judul": {
+          "type": "Text",
+          "config": {
+            "label": "Judul",
+            "placeholder": ""
+          }
+        },
+        "link_google_maps": {
+          "type": "Text",
+          "config": {
+            "label": "Link Google Maps",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,17 +1,21 @@
-import HeroImage from "@/app/components/HeroImage";
-import Sejarah from "@/app/components/Sejarah";
-import Lokasi from "@/app/components/Lokasi";
-import Blog from "@/app/components/Blog";
-import Video from "@/app/components/Video";
+import { Metadata } from "next";
+import { SliceZone } from "@prismicio/react";
 
-export default function Home() {
-  return (
-    <>
-      <HeroImage />
-      <Video />
-      <Sejarah />
-      <Blog />
-      <Lokasi />
-    </>
-  );
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
+
+export default async function Page() {
+  const client = createClient();
+  const page = await client.getSingle("halaman_utama");
+
+  return <SliceZone slices={page.data.slices} components={components} />;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getSingle("halaman_utama");
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
 }

@@ -1,0 +1,43 @@
+{
+  "id": "hero_image",
+  "type": "SharedSlice",
+  "name": "HeroImage",
+  "description": "HeroImage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "judul": {
+          "type": "Text",
+          "config": {
+            "label": "Judul",
+            "placeholder": ""
+          }
+        },
+        "deskripsi": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Deskripsi",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "gambar": {
+          "type": "Image",
+          "config": {
+            "label": "Gambar",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "video",
+  "type": "SharedSlice",
+  "name": "Video",
+  "description": "Video",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "judul": {
+          "type": "Text",
+          "config": {
+            "label": "Judul",
+            "placeholder": ""
+          }
+        },
+        "link_youtube": {
+          "type": "Text",
+          "config": {
+            "label": "Link Youtube",
+            "placeholder": ""
+          }
+        },
+        "deskripsi": {
+          "type": "Text",
+          "config": {
+            "label": "Deskripsi",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

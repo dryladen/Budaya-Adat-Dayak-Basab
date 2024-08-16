@@ -4,49 +4,93 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostDocumentDataSlicesSlice = TitleSlice;
+type BlogDocumentDataSlicesSlice = never;
 
 /**
- * Content for Blog Post documents
+ * Content for blog documents
  */
-interface BlogPostDocumentData {
+interface BlogDocumentData {
   /**
-   * Slice Zone field in *Blog Post*
+   * Judul field in *blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.judul
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Tanggal field in *blog*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.tanggal
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  tanggal: prismic.DateField;
+
+  /**
+   * Gambar field in *blog*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.gambar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  gambar: prismic.LinkToMediaField;
+
+  /**
+   * Konten field in *blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.konten
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  konten: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *blog*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.slices[]
+   * - **API ID Path**: blog.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
-   * Meta Title field in *Blog Post*
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
+   * Meta Title field in *blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_post.meta_title
+   * - **API ID Path**: blog.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Blog Post*
+   * Meta Description field in *blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: blog_post.meta_description
+   * - **API ID Path**: blog.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Blog Post*
+   * Meta Image field in *blog*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_image
+   * - **API ID Path**: blog.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
@@ -54,272 +98,624 @@ interface BlogPostDocumentData {
 }
 
 /**
- * Blog Post document from Prismic
+ * blog document from Prismic
  *
- * - **API ID**: `blog_post`
+ * - **API ID**: `blog`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BlogPostDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<BlogPostDocumentData>,
-    "blog_post",
-    Lang
-  >;
-
-interface DatainiDocumentData {}
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
 /**
- * dataini document from Prismic
+ * Item in *Data Utama → Media Sosial*
+ */
+export interface DataGlobalDocumentDataMediaSosialItem {
+  /**
+   * Nama field in *Data Utama → Media Sosial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.media_sosial[].nama
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nama: prismic.KeyTextField;
+
+  /**
+   * Link field in *Data Utama → Media Sosial*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.media_sosial[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for Data Utama documents
+ */
+interface DataGlobalDocumentData {
+  /**
+   * Nomor Telepon field in *Data Utama*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.nomor_telepon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nomor_telepon: prismic.KeyTextField;
+
+  /**
+   * Email field in *Data Utama*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Media Sosial field in *Data Utama*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.media_sosial[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  media_sosial: prismic.GroupField<
+    Simplify<DataGlobalDocumentDataMediaSosialItem>
+  >;
+
+  /**
+   * Lokasi field in *Data Utama*
+   *
+   * - **Field Type**: GeoPoint
+   * - **Placeholder**: *None*
+   * - **API ID Path**: data_global.lokasi
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#geopoint
+   */
+  lokasi: prismic.GeoPointField;
+}
+
+/**
+ * Data Utama document from Prismic
  *
- * - **API ID**: `dataini`
- * - **Repeatable**: `true`
+ * - **API ID**: `data_global`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type DatainiDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<DatainiDocumentData>,
-    "dataini",
+export type DataGlobalDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<DataGlobalDocumentData>,
+    "data_global",
     Lang
   >;
 
-export type AllDocumentTypes = BlogPostDocument | DatainiDocument;
+type HalamanUtamaDocumentDataSlicesSlice =
+  | LokasiSlice
+  | BagianBlogSlice
+  | SejarahSlice
+  | VideoSlice
+  | HeroImageSlice;
 
 /**
- * Primary content in *Hero → Default → Primary*
+ * Content for Halaman Utama documents
  */
-export interface HeroSliceDefaultPrimary {
+interface HalamanUtamaDocumentData {
   /**
-   * eyebrowHeadline field in *Hero → Default → Primary*
+   * Slice Zone field in *Halaman Utama*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: halaman_utama.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HalamanUtamaDocumentDataSlicesSlice> /**
+   * Meta Title field in *Halaman Utama*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Eyebrow
-   * - **API ID Path**: hero.default.primary.eyebrowHeadline
+   * - **Placeholder**: *None*
+   * - **API ID Path**: halaman_utama.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Halaman Utama*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: halaman_utama.meta_description
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  eyebrowHeadline: prismic.KeyTextField;
+  meta_description: prismic.KeyTextField;
 
   /**
-   * title field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * description field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * image field in *Hero → Default → Primary*
+   * Meta Image field in *Halaman Utama*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.image
+   * - **API ID Path**: halaman_utama.meta_image
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
-
-  /**
-   * callToActionLabel field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.callToActionLabel
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  callToActionLabel: prismic.KeyTextField;
-
-  /**
-   * callToActionLink field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.callToActionLink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  callToActionLink: prismic.LinkField;
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Hero Slice
+ * Halaman Utama document from Prismic
  *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
+ * - **API ID**: `halaman_utama`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroSliceDefaultPrimary>,
-  never
->;
+export type HalamanUtamaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HalamanUtamaDocumentData>,
+    "halaman_utama",
+    Lang
+  >;
 
 /**
- * Primary content in *Hero → Image Right → Primary*
+ * Item in *Navigasi → links*
  */
-export interface HeroSliceImageRightPrimary {
+export interface NavlinksDocumentDataLinksItem {
   /**
-   * eyebrowHeadline field in *Hero → Image Right → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Eyebrow
-   * - **API ID Path**: hero.imageRight.primary.eyebrowHeadline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  eyebrowHeadline: prismic.KeyTextField;
-
-  /**
-   * title field in *Hero → Image Right → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.imageRight.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * description field in *Hero → Image Right → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.imageRight.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * image field in *Hero → Image Right → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.imageRight.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * callToActionLabel field in *Hero → Image Right → Primary*
+   * name field in *Navigasi → links*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.imageRight.primary.callToActionLabel
+   * - **API ID Path**: navlinks.links[].name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  callToActionLabel: prismic.KeyTextField;
+  name: prismic.KeyTextField;
 
   /**
-   * callToActionLink field in *Hero → Image Right → Primary*
+   * url field in *Navigasi → links*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.imageRight.primary.callToActionLink
+   * - **API ID Path**: navlinks.links[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  callToActionLink: prismic.LinkField;
+  url: prismic.LinkField;
 }
 
 /**
- * Image Right variation for Hero Slice
- *
- * - **API ID**: `imageRight`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
+ * Content for Navigasi documents
  */
-export type HeroSliceImageRight = prismic.SharedSliceVariation<
-  "imageRight",
-  Simplify<HeroSliceImageRightPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Hero*
- */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceImageRight;
-
-/**
- * Hero Shared Slice
- *
- * - **API ID**: `hero`
- * - **Description**: Hero
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
-
-/**
- * Primary content in *Title → Judul → Primary*
- */
-export interface TitleSliceDefaultPrimary {
+interface NavlinksDocumentData {
   /**
-   * Title field in *Title → Judul → Primary*
+   * links field in *Navigasi*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navlinks.links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  links: prismic.GroupField<Simplify<NavlinksDocumentDataLinksItem>>;
+}
+
+/**
+ * Navigasi document from Prismic
+ *
+ * - **API ID**: `navlinks`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavlinksDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavlinksDocumentData>,
+    "navlinks",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice = never;
+
+/**
+ * Content for page documents
+ */
+interface PageDocumentData {
+  /**
+   * Judul field in *page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: title.default.primary.title
+   * - **API ID Path**: page.judul
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.KeyTextField;
+  judul: prismic.KeyTextField;
 
   /**
-   * gambar field in *Title → Judul → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: title.default.primary.gambar
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  gambar: prismic.ImageField<never>;
-
-  /**
-   * konten field in *Title → Judul → Primary*
+   * Konten field in *page*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: title.default.primary.konten
+   * - **API ID Path**: page.konten
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   konten: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Title field in *page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
- * Judul variation for Title Slice
+ * page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+export type AllDocumentTypes =
+  | BlogDocument
+  | DataGlobalDocument
+  | HalamanUtamaDocument
+  | NavlinksDocument
+  | PageDocument;
+
+/**
+ * Primary content in *BagianBlog → Default → Primary*
+ */
+export interface BagianBlogSliceDefaultPrimary {
+  /**
+   * Judul field in *BagianBlog → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bagian_blog.default.primary.judul
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Deskripsi field in *BagianBlog → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bagian_blog.default.primary.deskripsi
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deskripsi: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BagianBlog Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TitleSliceDefault = prismic.SharedSliceVariation<
+export type BagianBlogSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TitleSliceDefaultPrimary>,
+  Simplify<BagianBlogSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *Title*
+ * Slice variation for *BagianBlog*
  */
-type TitleSliceVariation = TitleSliceDefault;
+type BagianBlogSliceVariation = BagianBlogSliceDefault;
 
 /**
- * Title Shared Slice
+ * BagianBlog Shared Slice
  *
- * - **API ID**: `title`
- * - **Description**: Title
+ * - **API ID**: `bagian_blog`
+ * - **Description**: BagianBlog
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TitleSlice = prismic.SharedSlice<"title", TitleSliceVariation>;
+export type BagianBlogSlice = prismic.SharedSlice<
+  "bagian_blog",
+  BagianBlogSliceVariation
+>;
+
+/**
+ * Primary content in *HeroImage → Default → Primary*
+ */
+export interface HeroImageSliceDefaultPrimary {
+  /**
+   * Judul field in *HeroImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_image.default.primary.judul
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Deskripsi field in *HeroImage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_image.default.primary.deskripsi
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  deskripsi: prismic.RichTextField;
+
+  /**
+   * Gambar field in *HeroImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_image.default.primary.gambar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  gambar: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HeroImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroImage*
+ */
+type HeroImageSliceVariation = HeroImageSliceDefault;
+
+/**
+ * HeroImage Shared Slice
+ *
+ * - **API ID**: `hero_image`
+ * - **Description**: HeroImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroImageSlice = prismic.SharedSlice<
+  "hero_image",
+  HeroImageSliceVariation
+>;
+
+/**
+ * Primary content in *Lokasi → Default → Primary*
+ */
+export interface LokasiSliceDefaultPrimary {
+  /**
+   * Judul field in *Lokasi → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lokasi.default.primary.judul
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Link Google Maps field in *Lokasi → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lokasi.default.primary.link_google_maps
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_google_maps: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Lokasi Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LokasiSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LokasiSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Lokasi*
+ */
+type LokasiSliceVariation = LokasiSliceDefault;
+
+/**
+ * Lokasi Shared Slice
+ *
+ * - **API ID**: `lokasi`
+ * - **Description**: Lokasi
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LokasiSlice = prismic.SharedSlice<"lokasi", LokasiSliceVariation>;
+
+/**
+ * Primary content in *Sejarah → Default → Primary*
+ */
+export interface SejarahSliceDefaultPrimary {
+  /**
+   * Judul field in *Sejarah → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sejarah.default.primary.judul
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Konten field in *Sejarah → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sejarah.default.primary.konten
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  konten: prismic.RichTextField;
+
+  /**
+   * Gambar field in *Sejarah → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sejarah.default.primary.gambar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  gambar: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Sejarah Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SejarahSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SejarahSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Sejarah*
+ */
+type SejarahSliceVariation = SejarahSliceDefault;
+
+/**
+ * Sejarah Shared Slice
+ *
+ * - **API ID**: `sejarah`
+ * - **Description**: Sejarah
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SejarahSlice = prismic.SharedSlice<
+  "sejarah",
+  SejarahSliceVariation
+>;
+
+/**
+ * Primary content in *Video → Default → Primary*
+ */
+export interface VideoSliceDefaultPrimary {
+  /**
+   * Judul field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.judul
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  judul: prismic.KeyTextField;
+
+  /**
+   * Link Youtube field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.link_youtube
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_youtube: prismic.KeyTextField;
+
+  /**
+   * Deskripsi field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.deskripsi
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deskripsi: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Video Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Video*
+ */
+type VideoSliceVariation = VideoSliceDefault;
+
+/**
+ * Video Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: Video
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlice = prismic.SharedSlice<"video", VideoSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -331,22 +727,42 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      BlogPostDocument,
-      BlogPostDocumentData,
-      BlogPostDocumentDataSlicesSlice,
-      DatainiDocument,
-      DatainiDocumentData,
+      BlogDocument,
+      BlogDocumentData,
+      BlogDocumentDataSlicesSlice,
+      DataGlobalDocument,
+      DataGlobalDocumentData,
+      DataGlobalDocumentDataMediaSosialItem,
+      HalamanUtamaDocument,
+      HalamanUtamaDocumentData,
+      HalamanUtamaDocumentDataSlicesSlice,
+      NavlinksDocument,
+      NavlinksDocumentData,
+      NavlinksDocumentDataLinksItem,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-      HeroSlice,
-      HeroSliceDefaultPrimary,
-      HeroSliceImageRightPrimary,
-      HeroSliceVariation,
-      HeroSliceDefault,
-      HeroSliceImageRight,
-      TitleSlice,
-      TitleSliceDefaultPrimary,
-      TitleSliceVariation,
-      TitleSliceDefault,
+      BagianBlogSlice,
+      BagianBlogSliceDefaultPrimary,
+      BagianBlogSliceVariation,
+      BagianBlogSliceDefault,
+      HeroImageSlice,
+      HeroImageSliceDefaultPrimary,
+      HeroImageSliceVariation,
+      HeroImageSliceDefault,
+      LokasiSlice,
+      LokasiSliceDefaultPrimary,
+      LokasiSliceVariation,
+      LokasiSliceDefault,
+      SejarahSlice,
+      SejarahSliceDefaultPrimary,
+      SejarahSliceVariation,
+      SejarahSliceDefault,
+      VideoSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceVariation,
+      VideoSliceDefault,
     };
   }
 }

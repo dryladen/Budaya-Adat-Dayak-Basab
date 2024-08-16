@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"judul": {
+				"__TYPE__": "FieldContent",
+				"value": "industrial",
+				"type": "Text"
+			},
+			"link_google_maps": {
+				"__TYPE__": "FieldContent",
+				"value": "street",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

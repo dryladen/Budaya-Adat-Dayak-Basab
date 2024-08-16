@@ -1,0 +1,55 @@
+{
+  "format": "custom",
+  "id": "data_global",
+  "label": "Data Utama",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "nomor_telepon": {
+        "type": "Text",
+        "config": {
+          "label": "Nomor Telepon",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "media_sosial": {
+        "type": "Group",
+        "config": {
+          "label": "Media Sosial",
+          "repeat": true,
+          "fields": {
+            "nama": {
+              "type": "Text",
+              "config": {
+                "label": "Nama",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "lokasi": {
+        "type": "GeoPoint",
+        "config": {
+          "label": "Lokasi"
+        }
+      }
+    }
+  }
+}

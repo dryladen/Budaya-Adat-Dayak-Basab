@@ -1,0 +1,33 @@
+{
+  "id": "bagian_blog",
+  "type": "SharedSlice",
+  "name": "BagianBlog",
+  "description": "BagianBlog",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "judul": {
+          "type": "Text",
+          "config": {
+            "label": "Judul",
+            "placeholder": ""
+          }
+        },
+        "deskripsi": {
+          "type": "Text",
+          "config": {
+            "label": "Deskripsi",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

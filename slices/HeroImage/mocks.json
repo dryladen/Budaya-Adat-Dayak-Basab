@@ -1,0 +1,56 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"deskripsi": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mari mengenal lebih dekat tentang Suku Dayak Basab yang ada di Kalimantan Timur. Suku Dayak Basab memiliki kebudayaan yang unik dan menarik untuk dijelajahi.",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 157
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"gambar": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": "Gambar hanyalah contoh",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"judul": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Dayak Basab"
+			}
+		},
+		"items": []
+	}
+]

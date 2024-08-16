@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"judul": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Berada di Desa Jonggon"
+			},
+			"link_youtube": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "https://www.youtube.com/embed/Xby6hbn1aAw?si=CRBcZbfoo1yYBcw8"
+			},
+			"deskripsi": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Pada tahun 1970 masyarakat Suku Dayak Basab menjadi satu di Desa Jonggon, Desa antara Dayak Basab Jitan dengan masyarakat yang berada di Desa Jonggon."
+			}
+		},
+		"items": []
+	}
+]

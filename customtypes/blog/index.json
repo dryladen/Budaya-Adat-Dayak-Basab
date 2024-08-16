@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "blog_post",
-  "label": "Blog Post",
+  "id": "blog",
+  "label": "blog",
   "repeatable": true,
   "status": true,
   "json": {
@@ -12,15 +12,42 @@
         },
         "type": "UID"
       },
+      "judul": {
+        "type": "Text",
+        "config": {
+          "label": "Judul",
+          "placeholder": ""
+        }
+      },
+      "tanggal": {
+        "type": "Date",
+        "config": {
+          "label": "Tanggal",
+          "placeholder": ""
+        }
+      },
+      "gambar": {
+        "type": "Link",
+        "config": {
+          "label": "Gambar",
+          "placeholder": "",
+          "select": "media"
+        }
+      },
+      "konten": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Konten",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "title": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },

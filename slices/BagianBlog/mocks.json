@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"deskripsi": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Kunjungi blog kami untuk mendapatkan informasi terbaru seputar Dayak Basab"
+			},
+			"judul": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Blog"
+			}
+		},
+		"items": []
+	}
+]
