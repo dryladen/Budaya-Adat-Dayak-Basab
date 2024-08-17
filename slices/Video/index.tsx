@@ -29,10 +29,10 @@ const Video = ({ slice }: VideoProps): JSX.Element => {
         allowFullScreen
       ></iframe>
       <div className="relative z-10 md:bg-white h-full  md:p-8 lg:p-20 rounded-3xl md:shadow-lg sm:top-20">
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold flex flex-wrap text-gray-900">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold flex flex-wrap text-gray-900 mb-4">
           {slice.primary.judul}
         </h2>
-        <p className="text-medium text-gray-500 mt-2 ">
+        <p className="mt-3 md:text-medium lg:text-lg text-gray-500">
           {slice.primary.deskripsi}
         </p>
       </div>

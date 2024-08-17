@@ -27,7 +27,6 @@ async function getData() {
 
 const HeroImage = async () => {
   const data = await getData();
-  console.log(data)
   return (
     <section
       id="hero-image"

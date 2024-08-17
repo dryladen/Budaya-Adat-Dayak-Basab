@@ -1,3 +1,4 @@
+import Blog from "@/app/components/Blog";
 import CardComp from "@/app/components/card";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
@@ -28,7 +29,7 @@ const BagianBlog =  ({ slice }: BagianBlogProps): JSX.Element => {
         </p>
       </div>
       <div className="grid mb-8 gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
-        
+        <Blog />
       </div>
     </section>
   );

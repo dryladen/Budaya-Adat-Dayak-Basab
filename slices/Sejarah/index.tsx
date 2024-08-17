@@ -33,7 +33,7 @@ const Sejarah = ({ slice }: SejarahProps): JSX.Element => {
             className="p-4 sm:py-6 sm:px-8 inline-flex text-lg justify-center items-center font-medium rounded-full text-white bg-yellow-400 hover:bg-yellow-600 focus:outline-none hover:-translate-y-2 relative transition-all"
             startContent={<ChevronRight size={24} className="mr-2" />}
           >
-            <Link className="" href="#sejarah">
+            <Link className="" href="/blog/sejarah">
               Baca Selengkapnya
             </Link>
           </Button>

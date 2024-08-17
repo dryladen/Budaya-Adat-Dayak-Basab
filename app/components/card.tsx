@@ -25,7 +25,7 @@ export default function CardComp({
   return (
     <Card className="p-3 rounded-3xl w-[400px]">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-2xl">{title}</h4>
+        <h4 className="font-bold text-4xl">{title}</h4>
         <small className="text-default-500 flex items-end gap-1 justify-center">
           <Calendar width={16} />
           {date}
@@ -38,19 +38,20 @@ export default function CardComp({
             field={image}
           />
         </div>
-        <div className="overflow-hidden h-24 text-sm ">
+        <div className="overflow-hidden h-24 text-sm mt-4">
           <RichText field={konten} />
         </div>
-        <Button
-          className="mt-4 py-6 flex bg-yellow-400 hover:bg-yellow-700 text-white transition-all focus:outline-none focus:ring-0"
-          color="default"
-          radius="full"
-          startContent={<ChevronRight size={24} />}
-        >
-          <Link href={`/blog/${uid}`}>
+        <Link href={`/blog/${uid}`} className="w-full block">
+          <Button
+            className="mt-4 py-6 flex w-full bg-yellow-400 hover:bg-yellow-700 text-white transition-all focus:outline-none focus:ring-0"
+            color="default"
+            radius="full"
+            startContent={<ChevronRight size={24} />}
+            href={`/blog/${uid}`}
+          >
             <span className="text-center text-white">Baca Selengkapnya</span>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </CardBody>
     </Card>
   );
