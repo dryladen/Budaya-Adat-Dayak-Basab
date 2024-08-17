@@ -33,17 +33,6 @@ interface BlogDocumentData {
   tanggal: prismic.DateField;
 
   /**
-   * Gambar field in *blog*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.gambar
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  gambar: prismic.LinkToMediaField;
-
-  /**
    * Konten field in *blog*
    *
    * - **Field Type**: Rich Text
@@ -53,6 +42,17 @@ interface BlogDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   konten: prismic.RichTextField;
+
+  /**
+   * Gambar field in *blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.gambar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  gambar: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *blog*
@@ -172,17 +172,6 @@ interface DataGlobalDocumentData {
   media_sosial: prismic.GroupField<
     Simplify<DataGlobalDocumentDataMediaSosialItem>
   >;
-
-  /**
-   * Lokasi field in *Data Utama*
-   *
-   * - **Field Type**: GeoPoint
-   * - **Placeholder**: *None*
-   * - **API ID Path**: data_global.lokasi
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#geopoint
-   */
-  lokasi: prismic.GeoPointField;
 }
 
 /**
@@ -268,63 +257,6 @@ export type HalamanUtamaDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<HalamanUtamaDocumentData>,
     "halaman_utama",
-    Lang
-  >;
-
-/**
- * Item in *Navigasi → links*
- */
-export interface NavlinksDocumentDataLinksItem {
-  /**
-   * name field in *Navigasi → links*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navlinks.links[].name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * url field in *Navigasi → links*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navlinks.links[].url
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  url: prismic.LinkField;
-}
-
-/**
- * Content for Navigasi documents
- */
-interface NavlinksDocumentData {
-  /**
-   * links field in *Navigasi*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navlinks.links[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  links: prismic.GroupField<Simplify<NavlinksDocumentDataLinksItem>>;
-}
-
-/**
- * Navigasi document from Prismic
- *
- * - **API ID**: `navlinks`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NavlinksDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<NavlinksDocumentData>,
-    "navlinks",
     Lang
   >;
 
@@ -415,7 +347,6 @@ export type AllDocumentTypes =
   | BlogDocument
   | DataGlobalDocument
   | HalamanUtamaDocument
-  | NavlinksDocument
   | PageDocument;
 
 /**
@@ -736,9 +667,6 @@ declare module "@prismicio/client" {
       HalamanUtamaDocument,
       HalamanUtamaDocumentData,
       HalamanUtamaDocumentDataSlicesSlice,
-      NavlinksDocument,
-      NavlinksDocumentData,
-      NavlinksDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

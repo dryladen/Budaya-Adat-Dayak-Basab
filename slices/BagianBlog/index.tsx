@@ -1,4 +1,5 @@
 import CardComp from "@/app/components/card";
+import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -10,7 +11,7 @@ export type BagianBlogProps = SliceComponentProps<Content.BagianBlogSlice>;
 /**
  * Component for "BagianBlog" Slices.
  */
-const BagianBlog = ({ slice }: BagianBlogProps): JSX.Element => {
+const BagianBlog =  ({ slice }: BagianBlogProps): JSX.Element => {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -27,12 +28,7 @@ const BagianBlog = ({ slice }: BagianBlogProps): JSX.Element => {
         </p>
       </div>
       <div className="grid mb-8 gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
-        <CardComp />
-        <CardComp />
-        <CardComp />
-        <CardComp />
-        <CardComp />
-        <CardComp />
+        
       </div>
     </section>
   );
