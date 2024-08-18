@@ -29,12 +29,14 @@ const Sejarah = ({ slice }: SejarahProps): JSX.Element => {
           <RichText field={slice.primary.konten} />
         </div>
         <div className="my-7 flex">
-          <Button
-            startContent={<ChevronRight size={16} />}
-            className="py-6 px-8 inline-flex text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none "
-          >
-            <Link href="#sejarah">Baca Selengkapnya</Link>
-          </Button>
+          <Link href="/blog/sejarah">
+            <Button
+              startContent={<ChevronRight size={16} />}
+              className="py-6 px-8 inline-flex text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none "
+            >
+              Baca Selengkapnya
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="relative flex justify-center">

@@ -28,10 +28,11 @@ export default function CardComp({
         <div className="object-bottom overflow-hidden h-60">
           <PrismicImage
             field={image}
+            alt=""
           />
         </div>
       </CardHeader>
-      <CardBody className="overflow-visible py-2 w-full ">
+      <CardBody className="overflow-visible p-4 w-full ">
         <h4 className="font-bold text-4xl">{title}</h4>
         <small className="text-default-500 flex items-end gap-1 justify-start">
           <Calendar width={16} />

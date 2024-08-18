@@ -19,6 +19,7 @@ export default async function Page({ params }: { params: Params }) {
         <PrismicImage
           imgixParams={{ border: [2, "000000"], borderRadius: 20 }}
           field={page.data.gambar}
+          alt=""
         />
         <h1 className="mt-6 md:mt-16 mb-4 md:mb-8 text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
           {page.data.judul}
