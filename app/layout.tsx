@@ -6,6 +6,8 @@ import NavbarCompt from "@/app/components/NavbarCompt";
 import FooterCompt from "@/app/components/FooterCompt";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import { ArrowUp } from "lucide-react";
+import ScrollTopButton from "./components/ScrollTopButton";
 
 const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function RootLayout({
         <main className="relative overflow-hidden bg-white">
           <NavbarCompt />
           <Providers>{children}</Providers>
+          <ScrollTopButton />
         </main>
         <FooterCompt />
         <PrismicPreview repositoryName={repositoryName} />

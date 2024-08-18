@@ -2,6 +2,7 @@ import { Mail, Phone } from "lucide-react";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { createClient } from "@/prismicio";
+import { MenuItems } from "../lib/navigation";
 
 const FooterCompt = async () => {
   const client = createClient();
@@ -36,30 +37,16 @@ const FooterCompt = async () => {
           <div className="flex flex-col gap-4">
             <p className="text-xl font-semibold text-gray-100">Kunjungi</p>
             <div className="text-sm flex flex-col gap-4">
-              <Link
-                href="#sejarah"
-                className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 hover:animate-appearance-in "
-              >
-                <span className="hover:border-b-3 hover:border-yellow-400 transition-colors">
-                  Sejarah
-                </span>
-              </Link>
-              <Link
-                href="#blog"
-                className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 hover:animate-appearance-in "
-              >
-                <span className="hover:border-b-3 hover:border-yellow-400 transition-colors">
-                  Blog
-                </span>
-              </Link>
-              <Link
-                href="#lokasi"
-                className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 hover:animate-appearance-in "
-              >
-                <span className="hover:border-b-3 hover:border-yellow-400 transition-colors">
-                  Lokasi
-                </span>
-              </Link>
+              {MenuItems.map((item) => (
+                <Link
+                  href={item.link}
+                  className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 hover:animate-appearance-in "
+                >
+                  <span className="hover:border-b-3 hover:border-yellow-400 transition-colors">
+                    {item.title}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-4 text-gray-100">

@@ -9,6 +9,7 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import Link from "next/link";
+import { MenuItems } from "../lib/navigation";
 
 type NavLinkProps = {
   title: string;
@@ -28,12 +29,7 @@ const NavLink = ({ title, link, setMenuOpen }: NavLinkProps) => {
   );
 };
 
-const MenuItems = [
-  { title: "Beranda", link: "/#hero-image" },
-  { title: "Sejarah", link: "/#sejarah" },
-  { title: "Blog", link: "/blog" },
-  { title: "Lokasi", link: "/#lokasi" },
-];
+
 const NavbarCompt = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (

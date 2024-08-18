@@ -1,4 +1,5 @@
 import { RichText } from "@/app/components/RichText";
+import Transition from "@/app/components/Transition";
 import { Button } from "@nextui-org/react";
 import { Content } from "@prismicio/client";
 import { PrismicImage, SliceComponentProps } from "@prismicio/react";
@@ -25,9 +26,11 @@ const Sejarah = ({ slice }: SejarahProps): JSX.Element => {
         <h2 className="md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
           {slice.primary.judul}
         </h2>
-        <div className="md:text-medium lg:text-lg text-gray-500 ">
-          <RichText field={slice.primary.konten} />
-        </div>
+        <Transition>
+          <div className="md:text-medium lg:text-lg text-gray-500 ">
+            <RichText field={slice.primary.konten} />
+          </div>
+        </Transition>
         <div className="my-7 flex">
           <Link href="/blog/sejarah">
             <Button
