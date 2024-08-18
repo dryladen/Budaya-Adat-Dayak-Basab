@@ -1,10 +1,11 @@
+"use client";
 import { RichText } from "@/app/components/RichText";
 import { Button } from "@nextui-org/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 /**
  * Props for `HeroImage`.
  */
@@ -26,7 +27,11 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
       <div className="hidden md:flex bg-red-400 p-20 rounded-full w-44 h-44 absolute bottom-10 -right-20"></div>
       <div className=" mx-auto relative">
         <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4 md:gap-8 xl:gap-20 md:items-center">
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h1 className="block font-bold text-gray-900 text-4xl sm:text-6xl md:text-6xl lg:text-[88px] lg:leading-tight">
               {slice.primary.judul}
             </h1>
@@ -38,14 +43,19 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
                 Mari Jelajahi
               </Button>
             </Link>
-          </div>
-          <div className="relative">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="relative"
+          >
             <PrismicNextImage
               field={slice.primary.gambar}
               alt=""
               className="rounded-3xl shadow-xl"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

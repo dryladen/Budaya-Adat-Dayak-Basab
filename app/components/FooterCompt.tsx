@@ -39,6 +39,7 @@ const FooterCompt = async () => {
             <div className="text-sm flex flex-col gap-4">
               {MenuItems.map((item) => (
                 <Link
+                  key={item.title}
                   href={item.link}
                   className="transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 hover:animate-appearance-in "
                 >
