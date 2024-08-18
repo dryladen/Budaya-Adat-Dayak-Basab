@@ -23,29 +23,27 @@ export default function CardComp({
   konten,
 }: CardProps) {
   return (
-    <Card className="p-3 rounded-3xl w-[400px]">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-4xl">{title}</h4>
-        <small className="text-default-500 flex items-end gap-1 justify-center">
-          <Calendar width={16} />
-          {date}
-        </small>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2 w-full ">
-        <div className="rounded-3xl">
+    <Card className="rounded-3xl w-[400px]">
+      <CardHeader className="p-0 flex-col items-start">
+        <div className="object-bottom overflow-hidden h-60">
           <PrismicImage
-            imgixParams={{ borderRadius: 100, border: [1, "100000"] }}
             field={image}
           />
         </div>
-        <div className="overflow-hidden h-24 text-sm mt-4">
+      </CardHeader>
+      <CardBody className="overflow-visible py-2 w-full ">
+        <h4 className="font-bold text-4xl">{title}</h4>
+        <small className="text-default-500 flex items-end gap-1 justify-start">
+          <Calendar width={16} />
+          {date}
+        </small>
+        <div className="overflow-hidden h-20 text-sm mt-4">
           <RichText field={konten} />
         </div>
         <Link href={`/blog/${uid}`} className="w-full block">
           <Button
-            className="mt-4 py-6 flex w-full bg-yellow-400 hover:bg-yellow-700 text-white transition-all focus:outline-none focus:ring-0"
+            className="mt-4 rounded-3xl py-6 flex w-full bg-yellow-400 hover:bg-yellow-700 text-white transition-all focus:outline-none focus:ring-0"
             color="default"
-            radius="full"
             startContent={<ChevronRight size={24} />}
             href={`/blog/${uid}`}
           >

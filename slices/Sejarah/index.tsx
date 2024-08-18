@@ -25,7 +25,7 @@ const Sejarah = ({ slice }: SejarahProps): JSX.Element => {
         <h2 className="mt-6 mb-4 md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
           {slice.primary.judul}
         </h2>
-        <div className="text-justify indent-8 text-gray-700 md:text-lg mb-4">
+        <div className="mt-3 md:text-medium lg:text-lg text-gray-500 ">
           <RichText field={slice.primary.konten} />
         </div>
         <div className="my-7 grid gap-3 w-full sm:inline-flex">

@@ -27,11 +27,11 @@ export default async function Page({ params }: { params: Params }) {
           <RichText field={page.data.konten} />
         </div>
       </div>
-      <div className="p-20">
+      <div className="px-20">
         <div className="flex justify-between py-8">
           <h4 className="text-4xl font-bold text-gray-900">Blog Lainnya</h4>
           <Link href="/blog" className="block">
-            <Button className="ml-auto" color="primary" variant="bordered">
+            <Button className="border-gray-700 text-gray-700 px-8 rounded-full" color="primary" variant="bordered">
               Lihat Semua
             </Button>
           </Link>

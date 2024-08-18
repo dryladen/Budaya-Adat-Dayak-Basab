@@ -6,12 +6,6 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "config": {
-          "label": "UID"
-        },
-        "type": "UID"
-      },
       "judul": {
         "type": "Text",
         "config": {
@@ -19,11 +13,26 @@
           "placeholder": ""
         }
       },
+      "uid": {
+        "config": {
+          "label": "Samakan dengan judul",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
       "tanggal": {
         "type": "Date",
         "config": {
           "label": "Tanggal",
           "placeholder": ""
+        }
+      },
+      "gambar": {
+        "type": "Image",
+        "config": {
+          "label": "Gambar",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "konten": {
@@ -33,14 +42,6 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "gambar": {
-        "type": "Image",
-        "config": {
-          "label": "Gambar",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "slices": {

@@ -33,17 +33,6 @@ interface BlogDocumentData {
   tanggal: prismic.DateField;
 
   /**
-   * Konten field in *blog*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.konten
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  konten: prismic.RichTextField;
-
-  /**
    * Gambar field in *blog*
    *
    * - **Field Type**: Image
@@ -53,6 +42,17 @@ interface BlogDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   gambar: prismic.ImageField<never>;
+
+  /**
+   * Konten field in *blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.konten
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  konten: prismic.RichTextField;
 
   /**
    * Slice Zone field in *blog*
