@@ -13,13 +13,16 @@ import Link from "next/link";
 type NavLinkProps = {
   title: string;
   link: string;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NavLink = ({ title, link }: NavLinkProps) => {
+const NavLink = ({ title, link, setMenuOpen }: NavLinkProps) => {
   return (
     <>
       <NavbarItem className="hover:font-bold text-gray-600 transition-transform hover:border-b-large hover:border-yellow-400 hover:animate-appearance-in">
-        <Link href={link}>{title}</Link>
+        <Link onClick={() => setMenuOpen(false)} href={link}>
+          {title}
+        </Link>
       </NavbarItem>
     </>
   );
@@ -50,7 +53,7 @@ const NavbarCompt = () => {
         justify="end"
       >
         {MenuItems.map((item, index) => (
-          <NavLink key={index} title={item.title} link={item.link} />
+          <NavLink key={index} title={item.title} link={item.link} setMenuOpen={setIsMenuOpen} />
         ))}
       </NavbarContent>
       {/* Mobile View */}
@@ -69,7 +72,7 @@ const NavbarCompt = () => {
       </NavbarContent>
       <NavbarMenu className="pt-8">
         {MenuItems.map((item, index) => (
-          <NavLink key={index} title={item.title} link={item.link} />
+          <NavLink key={index} title={item.title} link={item.link} setMenuOpen={setIsMenuOpen}  />
         ))}
       </NavbarMenu>
     </Navbar>

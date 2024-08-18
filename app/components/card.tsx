@@ -23,7 +23,7 @@ export default function CardComp({
   konten,
 }: CardProps) {
   return (
-    <Card className="rounded-3xl w-[400px]">
+    <Card className="rounded-3xl w-full ">
       <CardHeader className="p-0 flex-col items-start">
         <div className="object-bottom overflow-hidden h-60">
           <PrismicImage
@@ -37,7 +37,7 @@ export default function CardComp({
           <Calendar width={16} />
           {date}
         </small>
-        <div className="overflow-hidden h-20 text-sm mt-4">
+        <div className="overflow-hidden h-20 text-sm mt-4 text-gray-500">
           <RichText field={konten} />
         </div>
         <Link href={`/blog/${uid}`} className="w-full block">
@@ -47,7 +47,7 @@ export default function CardComp({
             startContent={<ChevronRight size={24} />}
             href={`/blog/${uid}`}
           >
-            <span className="text-center text-white">Baca Selengkapnya</span>
+            <span className="text-center text-white text-lg">Baca Selengkapnya</span>
           </Button>
         </Link>
       </CardBody>

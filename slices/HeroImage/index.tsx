@@ -30,10 +30,10 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
             <h1 className="block font-bold text-gray-900 text-4xl sm:text-6xl md:text-6xl lg:text-[88px] lg:leading-tight">
               {slice.primary.judul}
             </h1>
-            <div className="mt-3 md:text-medium lg:text-lg text-gray-500">
+            <div className="mt-3 mb-0 md:text-medium lg:text-lg text-gray-500">
               {<RichText field={slice.primary.deskripsi} />}
             </div>
-            <Button className="sm:py-6 sm:px-8 inline-flex my-7 text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none ">
+            <Button className="py-6 px-8 inline-flex my-7 text-lg justify-center items-center rounded-full text-white font-medium bg-amber-400 hover:bg-yellow-600 hover:-translate-y-2 focus:ring-0 transition-all focus:outline-none ">
               <Link href="#sejarah">Mari Jelajahi</Link>
             </Button>
           </div>

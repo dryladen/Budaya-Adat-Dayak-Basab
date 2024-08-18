@@ -17,7 +17,7 @@ const Lokasi = ({ slice }: LokasiProps): JSX.Element => {
       id="lokasi"
       className="p-4 md:p-12 lg:p-20 bg-gray-100"
     >
-      <p className="mt-6 mb-4 md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
+      <p className="mb-4 md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
         {slice.primary.judul}
       </p>
       <iframe
