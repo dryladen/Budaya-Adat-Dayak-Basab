@@ -6,6 +6,8 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Suspense } from "react";
+import SkeletonLoad from "@/app/components/SkeletonLoad";
 /**
  * Props for `HeroImage`.
  */
@@ -44,18 +46,20 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
               </Button>
             </Link>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative"
-          >
-            <PrismicNextImage
-              field={slice.primary.gambar}
-              alt=""
-              className="rounded-3xl shadow-xl"
-            />
-          </motion.div>
+          <Suspense fallback={<SkeletonLoad width="100%" height="100%" />}>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="relative "
+            >
+              <PrismicNextImage
+                field={slice.primary.gambar}
+                alt=""
+                className="rounded-3xl shadow-xl "
+              />
+            </motion.div>
+          </Suspense>
         </div>
       </div>
     </section>
