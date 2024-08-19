@@ -4,9 +4,20 @@ import { RichText } from "@/app/components/RichText";
 import { createClient } from "@/prismicio";
 import { Button } from "@nextui-org/react";
 import { PrismicImage } from "@prismicio/react";
+import { field } from "graphql-request/alpha/schema";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 type Params = { uid: string };
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getByUID("blog", params.uid)
+  .catch(() => notFound());
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
+}
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
 

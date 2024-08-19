@@ -1,6 +1,12 @@
-import React from "react";
 import Blog from "../components/Blog";
+import { createClient } from "@/prismicio";
+import { Metadata } from "next";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Blogs",
+  };
+}
 const blog = () => {
   return (
     <section id="blog" className="bg-white pt-16 p-4 md:p-12 lg:p-20 lg:pt-28 ">

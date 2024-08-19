@@ -26,6 +26,14 @@
           "label": "Media Sosial",
           "repeat": true,
           "fields": {
+            "type": {
+              "type": "Select",
+              "config": {
+                "label": "Jenis Media Sosial",
+                "placeholder": "Silahkan pilih media sosial apa yang ingin ditambahkan",
+                "options": ["Facebook", "Instagram", "WhatsApp"]
+              }
+            },
             "nama": {
               "type": "Text",
               "config": {

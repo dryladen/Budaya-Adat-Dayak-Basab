@@ -7,16 +7,20 @@ const Blog = async () => {
 
   const blogs = await client.getAllByType("blog");
   return (
-    <div className="grid mb-8 gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
+    <div className="snap-x py-2 sm:snap-none flex overflow-x-scroll sm:overflow-x-hidden sm:grid mb-8 gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
       {blogs.map((blog) => (
-        <CardComp
-          key={blog.uid}
-          title={blog.data.judul}
-          date={blog.data.tanggal}
-          image={blog.data.gambar}
-          konten={blog.data.konten}
-          uid={blog.uid}
-        />
+        <>
+          <div className="snap-start">
+            <CardComp
+              key={blog.uid}
+              title={blog.data.judul}
+              date={blog.data.tanggal}
+              image={blog.data.gambar}
+              konten={blog.data.konten}
+              uid={blog.uid}
+            />
+          </div>
+        </>
       ))}
     </div>
   );

@@ -114,6 +114,16 @@ export type BlogDocument<Lang extends string = string> =
  */
 export interface DataGlobalDocumentDataMediaSosialItem {
   /**
+   * Jenis Media Sosial field in *Data Utama → Media Sosial*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Silahkan pilih media sosial apa yang ingin ditambahkan
+   * - **API ID Path**: data_global.media_sosial[].type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<"Facebook" | "Instagram" | "WhatsApp">;
+
+  /**
    * Nama field in *Data Utama → Media Sosial*
    *
    * - **Field Type**: Text

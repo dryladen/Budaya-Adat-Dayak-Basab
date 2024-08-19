@@ -13,6 +13,7 @@ type CardProps = {
   date: prismic.DateField;
   image: prismic.ImageFieldImage;
   konten: prismic.RichTextField;
+
 };
 
 export default function CardComp({
