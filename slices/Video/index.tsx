@@ -36,8 +36,8 @@ const Video = ({ slice }: VideoProps): JSX.Element => {
         allowFullScreen
       ></motion.iframe>
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.15 }}
         className="relative z-10 md:bg-white h-full  md:p-8 lg:p-20 rounded-3xl md:shadow-lg sm:top-20"
       >

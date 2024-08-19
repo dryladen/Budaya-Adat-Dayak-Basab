@@ -46,20 +46,18 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
               </Button>
             </Link>
           </motion.div>
-          <Suspense fallback={<SkeletonLoad width="100%" height="100%" />}>
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="relative "
-            >
-              <PrismicNextImage
-                field={slice.primary.gambar}
-                alt=""
-                className="rounded-3xl shadow-xl "
-              />
-            </motion.div>
-          </Suspense>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="relative "
+          >
+            <PrismicNextImage
+              field={slice.primary.gambar}
+              alt=""
+              className="rounded-3xl shadow-xl "
+            />
+          </motion.div>
         </div>
       </div>
     </section>
