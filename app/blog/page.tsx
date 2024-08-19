@@ -3,7 +3,7 @@ import Blog from "../components/Blog";
 
 const blog = () => {
   return (
-    <section id="blog" className="bg-white pt-16 p-4 md:p-12 lg:p-20 ">
+    <section id="blog" className="bg-white pt-16 p-4 md:p-12 lg:p-20 lg:pt-28 ">
       <div className=" mb-4 sm:text-center md:mb-12">
         <h2 className="mb-4 text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
           Blog
