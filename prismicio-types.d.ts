@@ -134,7 +134,7 @@ export interface DataGlobalDocumentDataMediaSosialItem {
   nama: prismic.KeyTextField;
 
   /**
-   * Link field in *Data Utama → Media Sosial*
+   * link field in *Data Utama → Media Sosial*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*

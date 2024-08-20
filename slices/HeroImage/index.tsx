@@ -6,8 +6,6 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
-import SkeletonLoad from "@/app/components/SkeletonLoad";
 /**
  * Props for `HeroImage`.
  */
@@ -22,7 +20,7 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       id="hero-image"
-      className="p-4 w-full sm:w-fit pb-20 md:px-12 lg:px-20 bg-gradient-to-b from-white from-90%  to-gray-100 relative mt-16 md:mt-24"
+      className="p-4 min-h-screen w-full sm:w-fit pb-20 md:px-12 lg:px-20 bg-gradient-to-b from-white from-90%  to-gray-100 relative mt-16 md:mt-24"
     >
       <div className="hidden md:flex bg-red-400 p-10 rounded-full w-20 h-20 absolute top-14 -left-10"></div>
       <div className="hidden md:flex bg-red-400 p-10 rounded-full w-20 h-20 absolute bottom-20 left-96"></div>
@@ -50,12 +48,13 @@ const HeroImage = ({ slice }: HeroImageProps): JSX.Element => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative "
+            className="relative h-full"
           >
             <PrismicNextImage
               field={slice.primary.gambar}
               alt=""
               className="rounded-3xl shadow-xl "
+              imgixParams={{ fit: "fill" }}
             />
           </motion.div>
         </div>

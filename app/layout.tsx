@@ -6,7 +6,6 @@ import NavbarCompt from "@/app/components/NavbarCompt";
 import FooterCompt from "@/app/components/FooterCompt";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import { ArrowUp } from "lucide-react";
 import ScrollTopButton from "./components/ScrollTopButton";
 
 const roboto = Roboto_Flex({ weight: "500", subsets: ["latin"] });

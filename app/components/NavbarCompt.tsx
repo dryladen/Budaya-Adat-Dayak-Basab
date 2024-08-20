@@ -29,7 +29,6 @@ const NavLink = ({ title, link, setMenuOpen }: NavLinkProps) => {
   );
 };
 
-
 const NavbarCompt = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
@@ -49,7 +48,12 @@ const NavbarCompt = () => {
         justify="end"
       >
         {MenuItems.map((item, index) => (
-          <NavLink key={index} title={item.title} link={item.link} setMenuOpen={setIsMenuOpen} />
+          <NavLink
+            key={index}
+            title={item.title}
+            link={item.link}
+            setMenuOpen={setIsMenuOpen}
+          />
         ))}
       </NavbarContent>
       {/* Mobile View */}
@@ -68,7 +72,12 @@ const NavbarCompt = () => {
       </NavbarContent>
       <NavbarMenu className="pt-8">
         {MenuItems.map((item, index) => (
-          <NavLink key={index} title={item.title} link={item.link} setMenuOpen={setIsMenuOpen}  />
+          <NavLink
+            key={index}
+            title={item.title}
+            link={item.link}
+            setMenuOpen={setIsMenuOpen}
+          />
         ))}
       </NavbarMenu>
     </Navbar>

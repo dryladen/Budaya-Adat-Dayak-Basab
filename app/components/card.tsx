@@ -13,7 +13,7 @@ type CardProps = {
   date: prismic.DateField;
   image: prismic.ImageFieldImage;
   konten: prismic.RichTextField;
-
+  key: string;
 };
 
 export default function CardComp({
@@ -22,9 +22,10 @@ export default function CardComp({
   date,
   image,
   konten,
+  key
 }: CardProps) {
   return (
-    <Card className="rounded-3xl w-full ">
+    <Card key={key}  className="rounded-3xl w-full ">
       <CardHeader className="p-0 flex-col items-start">
         <div className="object-bottom overflow-hidden h-60">
           <PrismicImage

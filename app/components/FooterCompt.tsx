@@ -3,6 +3,7 @@ import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { createClient } from "@/prismicio";
 import { MenuItems } from "../lib/navigation";
+import { PrismicNextLink } from "@prismicio/next";
 
 const FooterCompt = async () => {
   const client = createClient();
@@ -52,27 +53,24 @@ const FooterCompt = async () => {
           </div>
           <div className="flex flex-col gap-4 text-gray-100">
             <p className="text-xl font-semibold ">Media Sosial</p>
-            <Link
-              href="#"
-              className="text-sm hover:animate-appearance-in transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
-            >
-              <FaFacebook fontSize={14} className="text-white" />
-              <span>@dayak_basab</span>
-            </Link>
-            <Link
-              href="#"
-              className=" text-sm hover:animate-appearance-in transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
-            >
-              <FaInstagram fontSize={14} className="text-white" />
-              <span>@dayak_basab</span>
-            </Link>
-            <Link
-              href="#"
-              className=" text-sm hover:animate-appearance-in transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
-            >
-              <FaWhatsapp fontSize={14} className="text-white" />
-              <span>+62-8xx-xxx-xxxx</span>
-            </Link>
+            {data_global.data.media_sosial.map((item) => (
+              <PrismicNextLink
+                key={item.nama}
+                field={item.link}
+                className="text-sm hover:animate-appearance-in transition-colors duration-300 hover:text-deep-purple-accent-200 text-gray-100 flex gap-2 items-center"
+              >
+                {(item.type === "Facebook" && (
+                  <FaFacebook fontSize={14} className="text-white" />
+                )) ||
+                  (item.type === "Instagram" && (
+                    <FaInstagram fontSize={14} className="text-white" />
+                  )) ||
+                  (item.type === "WhatsApp" && (
+                    <FaWhatsapp fontSize={14} className="text-white" />
+                  ))}
+                <span>{item.nama}</span>
+              </PrismicNextLink>
+            ))}
           </div>
         </div>
       </div>
