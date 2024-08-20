@@ -27,7 +27,7 @@ const BagianBlog = ({ slice }: BagianBlogProps): JSX.Element => {
           <h2 className="md:justify-center text-3xl md:text-6xl font-bold flex flex-wrap text-gray-900">
             {slice.primary.judul}
           </h2>
-          <Link href="/blog" className="absolute right-1 bottom-11 flex items-center">
+          <Link href="/blog" className="absolute right-1 botton-5 md:bottom-8 flex items-center">
             <Button
               className="border-gray-700 text-gray-700 px-8 rounded-full"
               color="primary"
