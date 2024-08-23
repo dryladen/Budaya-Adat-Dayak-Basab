@@ -4,7 +4,6 @@ import { RichText } from "@/app/components/RichText";
 import { createClient } from "@/prismicio";
 import { Button } from "@nextui-org/react";
 import { PrismicImage } from "@prismicio/react";
-import { field } from "graphql-request/alpha/schema";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";

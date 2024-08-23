@@ -1,6 +1,5 @@
 "use client";
 import { ArrowUp } from "lucide-react";
-import { useEffect } from "react";
 
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 

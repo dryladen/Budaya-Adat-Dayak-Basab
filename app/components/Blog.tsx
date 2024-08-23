@@ -6,7 +6,6 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  Image,
 } from "@nextui-org/react";
 import { PrismicImage } from "@prismicio/react";
 import { Calendar, ChevronRight } from "lucide-react";
